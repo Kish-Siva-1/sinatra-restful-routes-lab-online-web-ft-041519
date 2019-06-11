@@ -38,6 +38,8 @@ class ApplicationController < Sinatra::Base
     @recipe.content = params[:content]
     @recipe.save
     redirect to "/articles/#{@recipe.id}"
-end
+  end
+  
+  
   
 end
