@@ -37,13 +37,13 @@ class ApplicationController < Sinatra::Base
     @recipe.title = params[:title]
     @recipe.content = params[:content]
     @recipe.save
-    redirect to "/articles/#{@recipe.id}"
+    redirect to "/recipes/#{@recipe.id}"
   end
   
-  delete '/articles/:id/delete' do #delete action
-  @article = Article.find_by_id(params[:id])
-  @article.delete
-  redirect to '/articles'
-end
+  delete '/recipes/:id/delete' do 
+    @recipe = Recipe.find_by_id(params[:id])
+    @recipe.delete
+    redirect to '/recipes'
+  end
   
 end
